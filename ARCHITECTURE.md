@@ -117,11 +117,6 @@ The execution flow is:
 | `/scan` | `sensor_msgs/msg/LaserScan` | Lidar → SLAM / Nav Firmware | range measurement |
 | `/map` | `nav_msgs/msg/OccupancyGrid` | SLAM → Nav Firmware | Environment map |
 | `/cmd_vel` | `geometry_msgs/msg/Twist` | Nav Firmware → ESP32 Bridge | Linear velocity commands |
-
-### Actions & Services
-
-| Interface | Type | Purpose |
-|---|---|---|
 | `/servo/angle` | `std_msgs/msg/String` | Requests FORWARD/BACKWARD/LEFT/RIGHT control from the robot |
 
 ### Communication Details
