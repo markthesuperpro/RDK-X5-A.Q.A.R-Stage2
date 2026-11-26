@@ -1,4 +1,4 @@
-# Autonomous-Quadruped-Intellegent-Monitoring-Robot
+# Autonomous-Quadruped-Intelligent-Monitoring-Robot
 
 **Robotics Dream Keeper Challenge — Winter 2026**
 
