@@ -153,6 +153,6 @@ Robot musts can:
 
 - **Development Roadmap:** [ROADMAP.md]
 - **Demonstration:** [VIDEO] #Todo
-- **Technical Evidence:** [Evidence](https://github.com/markthesuperpro/rdk-x5-stage1/tree/main/evidence) #Todo
+- **Technical Evidence:** [Evidence](https://github.com/markthesuperpro/rdk-x5-stage1/tree/main/evidence)
 - **RDK repo:** [Official Robotics Dream Keeper Challenge — Stage 2](https://github.com/D-Robotics/Robotics-Dream-Keeper-Challenge-Winter)
 - **RDK Documention:** [RDK X5 documentation](https://developer.d-robotics.cc/)
