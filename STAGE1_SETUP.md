@@ -1,3 +1,9 @@
+### Dependencies
+
+| Dependency | Version | Purpose |
+|---|---|---|
+| FFmpeg | 9.0.2 | Image/Video capture |
+
 ## Installation and Setup
 
 ### 1. Prepare the RDK X5
