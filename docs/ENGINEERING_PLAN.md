@@ -1,7 +1,7 @@
 # Engineering Plan — Autonomous Quadruped Monitoring Robot
 
 > **Stage:** 2 — Build · **Platform:** D-Robotics RDK X5 + TROS  
-> **Related:** [Proposal](https://github.com/markthesuperpro/rdk-x5-stage1/blob/main/PROPOSAL.md) · [Architecture](https://github.com/markthesuperpro/rdk-x5-stage1/blob/main/ARCHITECTURE.md) · [Roadmap](https://github.com/markthesuperpro/rdk-x5-stage1/blob/main/ROADMAP.md)  
+> **Related:** [Proposal](https://github.com/markthesuperpro/RDK-X5-A.Q.A.R-Stage2/blob/main/PROPOSAL.md) · [Architecture](https://github.com/markthesuperpro/rdk-x5-stage1/blob/main/ARCHITECTURE.md) · [Roadmap](https://github.com/markthesuperpro/rdk-x5-stage1/blob/main/ROADMAP.md)  
 > **Scope:** A quadruped robot with an ability to navigate anywhere accross the room and monitor eldery.
 
 ## 1. Bill of Materials (BOM)
