@@ -1,4 +1,4 @@
-# Autonomous-Quadruped-Intelligent-Assisting-Robot
+# Autonomous-Quadruped-Assisting-Robot-A.Q.A.R
 
 **Robotics Dream Keeper Challenge — Winter 2026**
 
