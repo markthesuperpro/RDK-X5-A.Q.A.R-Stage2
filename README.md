@@ -1,4 +1,4 @@
-# Autonomous-Quadruped-Monitoring-Robot — RDK X5 Robotics Project
+# Autonomous-Quadruped-Monitoring-Robot
 
 **Robotics Dream Keeper Challenge — Winter 2026**
 
@@ -44,7 +44,7 @@ See [ARCHITECTURE.md](https://github.com/markthesuperpro/rdk-x5-stage1/blob/main
 | Development board | USB Port+Cable | Remote desktop |
 | MicroSD card | MicroSD card port | System storage and Boot Firmware |
 | Camera | UDP | Video Stream |
-| ESP32 | USP | Motor Controller |
+| ESP32 | Wifi | Motor Controller |
 | LiDar Sensor | Serial | Environment detection |
 | USB power supply cable | USB cable + Adapter | Charging RDK |
 | Development laptop | - | Programming and Screen |
@@ -62,21 +62,17 @@ Record the actual versions running on your tested hardware.
 | CPU architecture | aarch64 |
 | Python | 3.15.2 |
 | ROS 2 | Humble |
-| SLAM | Latest |
+| SLAM | TBD |
 | Nav Firmware | Humble |
 | Other dependencies | ffmpeg |
 
-## Project Architecture
-
-Our RDK x5 board boot up with RDK os v3.5.0 via the MicroSD card. We then remote desktop to our board via USB 2.0 Quicklink. This way we can configure the board's wifi connection, thus allowing us to ssh to it via the connected wifi endpoint. After that, we attach USB webcam via the USB port and capture video and image using ffmpeg. We also tried experimenting the /app/ demo by using python to run the example program and input our captured image as parameter.  
+# Stage 1 - Ignite
 
 ### Architecture Explanation
 
 1. **Input:** Image captured from either the USB Camera or the web
 2. **Inference / Logic:** Data is processed through the demo programs
 3. **Output:** Displayed Via FFmpeg in the terminal
-
-# Stage 1 - Ignite
 
 ## Prerequisites and Dependencies
 
@@ -92,98 +88,12 @@ Our RDK x5 board boot up with RDK os v3.5.0 via the MicroSD card. We then remote
 - [RDK OS v3.5.0 Image](https://archive.d-robotics.cc/downloads/os_images/rdk_x5/rdk_os_3.5.0-2026-4-9/rdk-x5-ubuntu22-preinstalled-desktop-3.5.0-arm64.img.xz)
 - Python 3.15.2
 
-### Dependencies
-
-| Dependency | Version | Purpose |
-|---|---|---|
-| FFmpeg | 9.0.2 | Image/Video capture |
-
 ## Installation and Setup
 
-### 1. Prepare the RDK X5
+See the Stage1_setup guide here: 
+[Stage1_guide](https://github.com/markthesuperpro/rdk-x5-stage1/blob/main/STAGE1_SETUP.md)
 
-- Download system image via [RDK OS v3.5.0 Image](https://archive.d-robotics.cc/downloads/os_images/rdk_x5/rdk_os_3.5.0-2026-4-9/rdk-x5-ubuntu22-preinstalled-desktop-3.5.0-arm64.img.xz)
-- Download [Rufus](https://rufus.ie/en/)
-______________________________________________________________________________________________________________________________________________________________
-- 1.Boot up rufus and flash the system image downloaded into the MicroSD card attached via the USB MicroSD card reader.
-- 2.Disconnect the card reader and put the MicroSD card into the RDK x5 board's microSD card slot.
-- 3.Boot up RDK board via USB charging port using a USB adapter (+cable).
-
-## 2. Connect to the RDK X5
-
-### 1.Booting up RDK os
-
-- After booting up the board with RDK os successfully, proceed with [RDK Studio](https://developer.d-robotics.cc/en/rdkstudio?ref=drobotics.ghost.io) software
-- Next, connect the pc with the board via a USB cable connected by the USB quicklink port.
-- Inside RDK Studio, signin with your account and click into <Device & Development> tab and select <Remote Desktop>
-
-### 2.Setting up SSH
-
-- In OS desktop, select Applications>RDK Configuration, there a terminal window will popup.
-- In the terminal window, use the arrow keys to select <I1 SSH>, press enter and enable the SSH service
-- Finally, exit the terminal window and use the cmd or powershell from your laptop to ssh to the board using this command:
-  
-```bash
-ssh root@<<Your board IP>>
-```
-
-**Evidence:**
-
-[SSH Connection](evidence/Flash_ssh.log)
-
-### 4. Configure Hardware/Camera
-
-For this demo project, configuring hardware is really simple. In fact, because in this project we use only the webcam, all we need to do is to connect it and capture images and videos from the webcam using ffmpeg using the following steps:
-
-- 1.For capturing videos, do:
-  
-```bash
-sudo apt install v4l-utils
-v4l2-ctl --list-devices
-ffplay /dev/video0   ##replace /video0 with whatever /video[num] your webcam have
-```
-
-- 2.For taking and saving pictures, do:
-
-```bash
-ffmpeg -f v4l2 -video_size 1920x1080 -i /dev/video0 -vframes 1 <<Your directory path>>/photo.jpg
-```
-
-**Evidence:**
-
-![Webcam Image](evidence/Sensor.png)
-
-## Running the Demo
-
-### 1. Navigation
-
-Navigate to the /app/pydev_demo/ and select the demo as of your uses. For this exampke I'll be using pose detection:
-
-```bash
-cd /app/pydev_demo/04_pose_sample/01_ultralytics_yolo11_pose/
-```
-
-### 2. Run the Demo
-
-Run the demo by using python:
-
-```bash
-python ultralytics_yolo11_pose.py
-```
-
-### 3. Model Output
-
-## Original.png
-![AI model output](evidence/Yolo11_original.png)
-
-## Result
-![AI model output](evidence/Yolo11_demo.png)
-
-**Observed result:**
-
-The model successfully identifies the people walking on the crosswalk.
-
-# Stage 2 — Build (Proposal, Roadmap, etc.)
+# Stage 2 — Build
 
 The next step is to start connecting each of the components and wrapping things up.
 
