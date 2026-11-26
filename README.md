@@ -107,23 +107,21 @@ Our RDK x5 board boot up with RDK os v3.5.0 via the MicroSD card. We then remote
 
 ```text
 rdk-x5-stage1/
-|
-+-- .gitignore
-+-- README.md
-+-- LICENSE
-+-- requirements.txt
-|
-+-- src/
-+-- docs/
-|   +-- architecture/
-|   +-- setup/
-|
-+-- evidence/
-    +-- Flash_ssh.log
-    +-- Sensor.png
-    +-- Yolo11_demo.png
-    +-- Yolo11_original.png
-    +-- hardware.png
+├── README.md
+├── ROADMAP.md
+├── PROPOSAL.md
+├── ARCHITECTURE.md
+├── LICENSE
+├── requirements.txt
+├── src/
+├── evidence/
+    ├── Flash_ssh.log
+    ├── Sensor.png
+    ├── Yolo11_demo.png
+    ├── Yolo11_original.png
+    ├── hardware.png
+└── docs/
+    └── ENGINEERING_PLAN.md
 ```
 
 ## Prerequisites and Dependencies
