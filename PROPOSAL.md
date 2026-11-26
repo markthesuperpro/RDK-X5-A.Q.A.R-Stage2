@@ -200,9 +200,9 @@ Robot musts can:
 | Operating scenario and constraints | [PROPOSAL.md](https://github.com/markthesuperpro/rdk-x5-stage1/blob/main/PROPOSAL.md) |
 | Intended users and interaction | [PROPOSAL.md](https://github.com/markthesuperpro/rdk-x5-stage1/blob/main/PROPOSAL.md) |
 | Core AI capabilities and innovation | [PROPOSAL.md](https://github.com/markthesuperpro/rdk-x5-stage1/blob/main/PROPOSAL.md) |
-| Architecture and data flow | [ARCHITECTURE.md] |
-| Module responsibilities and failure modes | [ARCHITECTURE.md] |
-| BPU / CPU | [ARCHITECTURE.md] |
+| Architecture and data flow | [ARCHITECTURE.md](https://github.com/markthesuperpro/rdk-x5-stage1/blob/main/ARCHITECTURE.md) |
+| Module responsibilities and failure modes | [ARCHITECTURE.md](https://github.com/markthesuperpro/rdk-x5-stage1/blob/main/ARCHITECTURE.md) |
+| BPU / CPU | [ARCHITECTURE.md](https://github.com/markthesuperpro/rdk-x5-stage1/blob/main/ARCHITECTURE.md) |
 | ROS 2 graph and interfaces | Architecture diagrams |
 | BOM and engineering timeline | [ENGINEERING_PLAN.md] / [ROADMAP.md] |
 | risks and mitigation | [ENGINEERING_PLAN.md] |
