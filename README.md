@@ -101,7 +101,7 @@ The next step is to start connecting each of the components and wrapping things 
 
 |Document|Description|
 |--------|-----------|
-| [PROPOSAL.md](https://github.com/markthesuperpro/rdk-x5-stage1/blob/main/PROPOSAL.md) | Concepts, Intended Use, Solutions, Progress Status, etc. |
+| [PROPOSAL.md](https://github.com/markthesuperpro/RDK-X5-A.Q.A.R-Stage2/blob/main/PROPOSAL.md) | Concepts, Intended Use, Solutions, Progress Status, etc. |
 | [ARCHITECTURE.md](https://github.com/markthesuperpro/rdk-x5-stage1/blob/main/ARCHITECTURE.md) | System Flow, Components, Node_lists, Safety |
 | [ROADMAP.md](https://github.com/markthesuperpro/rdk-x5-stage1/blob/main/ROADMAP.md) | Tasks milestones |
 | [ENGINEERING_PLAN.md](https://github.com/markthesuperpro/rdk-x5-stage1/blob/main/docs/ENGINEERING_PLAN.md) | BOM, Five Risks, Repo structure |
