@@ -22,7 +22,7 @@
 
 The RDK X5 performs navigation and sensory calculations. The ESP32 handles motor control and converts movement commands into quadruped locomotion.
 
-See [ARCHITECTURE.md](https://github.com/markthesuperpro/rdk-x5-stage1/blob/main/ARCHITECTURE.md) for the complete system design, ROS 2 interfaces, compute allocation and failure handling.
+See [ARCHITECTURE.md](https://github.com/markthesuperpro/RDK-X5-A.Q.A.R-Stage2/blob/main/ARCHITECTURE.md) for the complete system design, ROS 2 interfaces, compute allocation and failure handling.
 
 ## Hardware
 
@@ -93,7 +93,7 @@ See [ARCHITECTURE.md](https://github.com/markthesuperpro/rdk-x5-stage1/blob/main
 ## Installation and Setup
 
 See the Stage1_setup guide here: 
-[Stage1_guide](https://github.com/markthesuperpro/rdk-x5-stage1/blob/main/STAGE1_SETUP.md)
+[Stage1_guide](https://github.com/markthesuperpro/RDK-X5-A.Q.A.R-Stage2/blob/main/STAGE1_SETUP.md)
 
 # Stage 2 — Build
 
@@ -103,9 +103,10 @@ The next step is to start connecting each of the components and wrapping things 
 |--------|-----------|
 | [PROPOSAL.md](https://github.com/markthesuperpro/RDK-X5-A.Q.A.R-Stage2/blob/main/PROPOSAL.md) | Concepts, Intended Use, Solutions, Progress Status, etc. |
 | [ARCHITECTURE.md](https://github.com/markthesuperpro/RDK-X5-A.Q.A.R-Stage2/blob/main/ARCHITECTURE.md) | System Flow, Components, Node_lists, Safety |
-| [ROADMAP.md](https://github.com/markthesuperpro/rdk-x5-stage1/blob/main/ROADMAP.md) | Tasks milestones |
-| [ENGINEERING_PLAN.md](https://github.com/markthesuperpro/rdk-x5-stage1/blob/main/docs/ENGINEERING_PLAN.md) | BOM, Five Risks, Repo structure |
+| [ROADMAP.md](https://github.com/markthesuperpro/RDK-X5-A.Q.A.R-Stage2/blob/main/ROADMAP.md) | Tasks milestones |
+| [ENGINEERING_PLAN.md](https://github.com/markthesuperpro/RDK-X5-A.Q.A.R-Stage2/blob/main/docs/ENGINEERING_PLAN.md) | BOM, Five Risks, Repo structure |
 
+https://github.com/markthesuperpro/RDK-X5-A.Q.A.R-Stage2
 ## Results and Verification
 
 Record actual observations from your experiments.
@@ -135,7 +136,7 @@ Only include measurements you have actually taken.
 ### Additional Evidence
 
 - [Demonstration video](YOUR_VIDEO_LINK) - (#TODO)
-- [Detailed experiment report](https://github.com/markthesuperpro/rdk-x5-stage1/tree/main/docs)
+- [Detailed experiment report](https://github.com/markthesuperpro/RDK-X5-A.Q.A.R-Stage2/tree/main/docs)
 
 ## Next Challenge Stages
 
