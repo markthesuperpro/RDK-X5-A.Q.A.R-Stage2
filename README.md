@@ -4,7 +4,7 @@
 
 - **Participant:** Mark
 - **Project:** RDK X5-Autonomous-Quadruped-Monitoring-Robot
-- **Current stage:** Stage2-build
+- **Current stage:** Stage 2 — Build
 - **Hardware:** D-Robotics RDK X5 + ESP32
 - **Repository status:** Development
 
@@ -16,7 +16,11 @@
 
 `Sensors → RDK X5 (TROS / ROS 2) → SLAM → Nav Firmware → ESP32 → Servos`
 
-The RDK X5 performs navigation calculations. The ESP32 handles motor control and converts movement commands into quadruped locomotion.
+**Target Perception Pipeline:**
+
+`Camera → AI Perception → Monitoring Events`
+
+The RDK X5 performs navigation and sensory calculations. The ESP32 handles motor control and converts movement commands into quadruped locomotion.
 
 See [ARCHITECTURE.md](https://github.com/markthesuperpro/rdk-x5-stage1/blob/main/ARCHITECTURE.md) for the complete system design, ROS 2 interfaces, compute allocation and failure handling.
 
@@ -28,7 +32,7 @@ See [ARCHITECTURE.md](https://github.com/markthesuperpro/rdk-x5-stage1/blob/main
 | Storage | microSD card | System storage and Boot Firmware |
 | ESP32 | ESP32 DEVKIT | Motor Controller |
 | Camera | - | Video Stream |
-| LiDar Sensor | - | Sensory |
+| LiDar | - | Sensory |
 | 3D Parts (for robot) | Made with PETG | Robot foundations |
 | Servo Motors | microServo | Robot movement |
 | Development PC | Laptop | Development and remote access |
@@ -44,15 +48,13 @@ See [ARCHITECTURE.md](https://github.com/markthesuperpro/rdk-x5-stage1/blob/main
 | Development board | USB Port+Cable | Remote desktop |
 | MicroSD card | MicroSD card port | System storage and Boot Firmware |
 | Camera | UDP | Video Stream |
-| ESP32 | Wifi | Motor Controller |
+| ESP32 | UDP | Motor Controller |
 | LiDar Sensor | Serial | Environment detection |
 | USB power supply cable | USB cable + Adapter | Charging RDK |
 | Development laptop | - | Programming and Screen |
 
 
 ## Tested Software Environment
-
-Record the actual versions running on your tested hardware.
 
 | Component | Version / Configuration |
 |---|---|
@@ -64,7 +66,7 @@ Record the actual versions running on your tested hardware.
 | ROS 2 | Humble |
 | SLAM | TBD |
 | Nav Firmware | Humble |
-| Other dependencies | ffmpeg |
+| Other dependencies | ffmpeg* |
 
 # Stage 1 - Ignite
 
@@ -114,7 +116,7 @@ Record actual observations from your experiments.
 | Network / SSH | Enabled | Successful SSH | working. |
 | Sensor | Webcam connected | Can transmit Photo and Video | working. |
 | AI inference (#TODO) | N/A | N/A | N/A |
-| Actuator | Enabled | Working. | working. |
+| Actuator | Enabled | Working, 90 degree test and calibration test yeild great result. | working. |
 
 ### Performance Measurements (#TODO)
 
