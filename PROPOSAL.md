@@ -12,7 +12,7 @@ A quadruped walking robot, made for monitoring elders, powered by esp32 and RDKx
 | **Status** | Stage 2 - In Development |
 | **Repository** | https://github.com/markthesuperpro/rdk-x5-stage1 |
 | **Roadmap** | <ROADMAP.md> |
-| **Proposal Version:** 1.0 |
+| **Proposal Version:** | 1.0 |
 | **Last Updated** | 26-11-2026 |
 
 ## 1. Summary
