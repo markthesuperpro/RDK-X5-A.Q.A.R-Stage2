@@ -19,7 +19,7 @@ Hardware required for the current prototype and final demonstration. Costs are e
 | 7 | 3D parts | 3 | PETG | – | Built | $0 (Self-Print) |
 | 8 | Storage | 1 | microSD | SD interface | In use | $15 |
 
-## 3. Top Five Risks
+## 3. Top Risks
 
 Project-specific risks, their observable triggers, preventive measures and practical fallbacks.
 
