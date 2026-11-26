@@ -1,7 +1,7 @@
 # Architecture
 
 > **Status:** Stage 2 — In Progress  
-> **Related:** [PROPOSAL.md](https://github.com/markthesuperpro/RDK-X5-A.Q.A.R-Stage2/blob/main/PROPOSAL.md) · [README.md](https://github.com/markthesuperpro/rdk-x5-stage1/blob/main/README.md)
+> **Related:** [PROPOSAL.md](https://github.com/markthesuperpro/RDK-X5-A.Q.A.R-Stage2/blob/main/PROPOSAL.md) · [README.md](https://github.com/markthesuperpro/RDK-X5-A.Q.A.R-Stage2/blob/main/README.md)
 
 ## 1. System Flow
 
