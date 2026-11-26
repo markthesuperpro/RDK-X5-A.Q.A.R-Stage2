@@ -1,39 +1,24 @@
-# rdk-x5-stage1 — RDK X5 Robotics Project
+# Autonomous-Quadruped-Monitoring-Robot — RDK X5 Robotics Project
 
 **Robotics Dream Keeper Challenge — Winter 2026**
 
 - **Participant:** Mark
-- **Project:** rdk-x5-stage1-demo
-- **Current stage:** Stage 1 — Ignite
-- **Hardware:** D-Robotics RDK X5
+- **Project:** RDK X5-Autonomous-Quadruped-Monitoring-Robot
+- **Current stage:** Stage2-build
+- **Hardware:** D-Robotics RDK X5 + ESP32
 - **Repository status:** Development
 
 ---
 
-## Demonstration
-
-The RDK board is sucessfully able to boot up Ubuntu, connect to the computer using remote desktop, and run /app/ Yolo11 demos
-
-### Main Result
-
-![Main demonstration result](evidence/Yolo11_demo.png)
-
-**What this demonstrates:**
-
-- The board is able to request video/0/ from connected usb webcam
-- The demo Yolo11 pose model is able to run fluently
-
 ## Project Overview
 
-### Approach
+**Target data flow:**
 
-Our project approach is to first understand foundational part of our hardware and software. After that, we will experiment with ROS2 and AI models.
+`Sensors → RDK X5 (TROS / ROS 2) → SLAM → Nav Firmware → ESP32 → Servos`
 
-### Objectives
+The RDK X5 performs navigation calculations. The ESP32 handles motor control and converts movement commands into quadruped locomotion.
 
-- 1.Learn the fundementals
-- 2.Try ROS
-- 3.Proceed with the project goal.
+See [ARCHITECTURE.md](https://github.com/markthesuperpro/rdk-x5-stage1/blob/main/ARCHITECTURE.md) for the complete system design, ROS 2 interfaces, compute allocation and failure handling.
 
 ## Hardware
 
@@ -41,9 +26,11 @@ Our project approach is to first understand foundational part of our hardware an
 |---|---|---|
 | Development board | D-Robotics RDK X5 | Main computing platform |
 | Storage | microSD card | System storage and Boot Firmware |
-| Camera | Usb Webcam | Video Capture |
-| Sensor | LiDar / N/A | Navigation |
-| Actuator | Motor - Future goal | Movement |
+| ESP32 | ESP32 DEVKIT | Motor Controller |
+| Camera | - | Video Stream |
+| LiDar Sensor | - | Sensory |
+| 3D Parts (for robot) | Made with PETG | Robot foundations |
+| Servo Motors | microServo | Robot movement |
 | Development PC | Laptop | Development and remote access |
 
 ### Hardware Setup
@@ -56,7 +43,9 @@ Our project approach is to first understand foundational part of our hardware an
 |---|---|---|
 | Development board | USB Port+Cable | Remote desktop |
 | MicroSD card | MicroSD card port | System storage and Boot Firmware |
-| USB Webcam | USB connection | Video Capture |
+| Camera | UDP | Video Stream |
+| ESP32 | USP | Motor Controller |
+| LiDar Sensor | Serial | Environment detection |
 | USB power supply cable | USB cable + Adapter | Charging RDK |
 | Development laptop | - | Programming and Screen |
 
@@ -72,30 +61,14 @@ Record the actual versions running on your tested hardware.
 | Linux kernel | v6.1.83 |
 | CPU architecture | aarch64 |
 | Python | 3.15.2 |
-| ROS 2 | Not used yet |
+| ROS 2 | Humble |
+| SLAM | Latest |
+| Nav Firmware | Humble |
 | Other dependencies | ffmpeg |
 
 ## Project Architecture
 
 Our RDK x5 board boot up with RDK os v3.5.0 via the MicroSD card. We then remote desktop to our board via USB 2.0 Quicklink. This way we can configure the board's wifi connection, thus allowing us to ssh to it via the connected wifi endpoint. After that, we attach USB webcam via the USB port and capture video and image using ffmpeg. We also tried experimenting the /app/ demo by using python to run the example program and input our captured image as parameter.  
-
-### Architecture Diagram
-
-```text
-[USB Camera/Image online]
-        |
-        v
-[Demo /app/ programs]
-        |
-        v
-[RDK X5 BPU / CPU]
-        |
-        v
-[Image Output]
-        |
-        v
-[FFmpeg Display / Result]
-```
 
 ### Architecture Explanation
 
@@ -103,26 +76,7 @@ Our RDK x5 board boot up with RDK os v3.5.0 via the MicroSD card. We then remote
 2. **Inference / Logic:** Data is processed through the demo programs
 3. **Output:** Displayed Via FFmpeg in the terminal
 
-## Repository Structure
-
-```text
-rdk-x5-stage1/
-├── README.md
-├── ROADMAP.md
-├── PROPOSAL.md
-├── ARCHITECTURE.md
-├── LICENSE
-├── requirements.txt
-├── src/
-├── evidence/
-    ├── Flash_ssh.log
-    ├── Sensor.png
-    ├── Yolo11_demo.png
-    ├── Yolo11_original.png
-    ├── hardware.png
-└── docs/
-    └── ENGINEERING_PLAN.md
-```
+# Stage 1 - Ignite
 
 ## Prerequisites and Dependencies
 
@@ -229,7 +183,16 @@ python ultralytics_yolo11_pose.py
 
 The model successfully identifies the people walking on the crosswalk.
 
+# Stage 2 — Build (Proposal, Roadmap, etc.)
 
+The next step is to start connecting each of the components and wrapping things up.
+
+|Document|Description|
+|--------|-----------|
+|[PROPOSAL.md](https://github.com/markthesuperpro/rdk-x5-stage1/blob/main/PROPOSAL.md)||Concepts, Intended Use, Solutions, Progress Status, etc.|
+|[ARCHITECTURE.md](https://github.com/markthesuperpro/rdk-x5-stage1/blob/main/ARCHITECTURE.md)||System Flow, Components, Node_lists, Safety|
+|[ROADMAP.md](https://github.com/markthesuperpro/rdk-x5-stage1/blob/main/ROADMAP.md)||Tasks milestones|
+|[ENGINEERING_PLAN.md](https://github.com/markthesuperpro/rdk-x5-stage1/blob/main/docs/ENGINEERING_PLAN.md)||BOM, Five Risks, Repo structure|
 
 ## Results and Verification
 
@@ -238,12 +201,12 @@ Record actual observations from your experiments.
 | Test | Configuration | Actual Result | Status |
 |---|---|---|---|
 | System boot | N/A | System boot successfully | ok. |
-| Network / SSH | Enabled | Successful SSH | working |
-| Sensor | Webcam connected | Can transmit Photo and Video | working |
+| Network / SSH | Enabled | Successful SSH | working. |
+| Sensor | Webcam connected | Can transmit Photo and Video | working. |
 | AI inference (#TODO) | N/A | N/A | N/A |
-| Actuator (#TODO) | N/A | N/A | N/A |
+| Actuator | Enabled | Working. | working. |
 
-### Performance Measurements #TODO
+### Performance Measurements (#TODO)
 
 Only include measurements you have actually taken.
 
@@ -259,38 +222,10 @@ Only include measurements you have actually taken.
 
 ### Additional Evidence
 
-- [Demonstration video](YOUR_VIDEO_LINK) - #todo
-- [Detailed experiment report](YOUR_DOCUMENTATION_LINK) - #todo
+- [Demonstration video](YOUR_VIDEO_LINK) - (#TODO)
+- [Detailed experiment report](https://github.com/markthesuperpro/rdk-x5-stage1/tree/main/docs)
 
-## Troubleshooting
-
-### SSH not working
-
-**Symptoms:**
-
-SSH can't connect
-
-**Solution:**
-
-change sunrise@ to root@
-
-### Can't connect to board
-
-**Symptoms:**
-
-Can't find board ip
-
-**Solution:**
-
-Restart and check which IP newly appear, that is board ip.
-
-## Known Limitations
-
-- Remote Desktop speed
-
-## Future Development
-
-### Next Challenge Stages
+## Next Challenge Stages
 
 | Stage | Planned development |
 |---|---|
@@ -312,8 +247,8 @@ Third-party components remain subject to their respective licenses.
 
 **Organizer:** D-Robotics
 
-**Current stage:** Stage 1
+**Current stage:** Stage 2
 
 - [Official Challenge Repository](https://github.com/D-Robotics/Robotics-Dream-Keeper-Challenge-Winter)
-- [Project Showcase](YOUR_SHOWCASE_PR_URL)
+- [Project Showcase](https://github.com/D-Robotics/Robotics-Dream-Keeper-Challenge-Winter/blob/main/projects/Mark-Project-rdk-x5-stage1-demo.md)
 - [Community Update](https://discord.com/channels/1300358874280230994/1503706103752429618/threads/1565947368782831757)
