@@ -11,7 +11,7 @@ A quadruped walking robot, made for monitoring elders, powered by esp32 and RDKx
 | **Software** | ROS 2 / TROS / ESP32 Firmware |
 | **Status** | Stage 2 - In Development |
 | **Repository** | https://github.com/markthesuperpro/rdk-x5-stage1 |
-| **Roadmap** | <ROADMAP.md> |
+| **Roadmap** | [ROADMAP.md] |
 | **Proposal Version:** | 1.0 |
 | **Last Updated** | 26-11-2026 |
 
@@ -137,9 +137,9 @@ Robot musts can:
 
 | Official Stage 2 requirement | Supporting deliverable |
 |---|---|
-| Operating scenario and constraints | [PROPOSAL.md] |
-| Intended users and interaction | [PROPOSAL.md] |
-| Core AI capabilities and innovation | [PROPOSAL.md] |
+| Operating scenario and constraints | [PROPOSAL.md](https://github.com/markthesuperpro/rdk-x5-stage1/blob/main/PROPOSAL.md) |
+| Intended users and interaction | [PROPOSAL.md](https://github.com/markthesuperpro/rdk-x5-stage1/blob/main/PROPOSAL.md) |
+| Core AI capabilities and innovation | [PROPOSAL.md](https://github.com/markthesuperpro/rdk-x5-stage1/blob/main/PROPOSAL.md) |
 | Architecture and data flow | [ARCHITECTURE.md] |
 | Module responsibilities and failure modes | [ARCHITECTURE.md] |
 | BPU / CPU | [ARCHITECTURE.md] |
