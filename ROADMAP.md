@@ -23,9 +23,8 @@ Last updated: 2026-11-26.
 - [x] Proposal.md
 - [x] Architecture.md
 - [x] Roadmap.md
-- [ ] ENGINEERING_PLAN.md
-- [ ] Timeline.md
-- [ ] Readme.md
+- [x] ENGINEERING_PLAN.md
+- [x] fix Readme.md
 - [ ] Showcase.md & Pull request
 - [ ] Discord Thread
 
