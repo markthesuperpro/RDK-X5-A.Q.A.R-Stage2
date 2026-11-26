@@ -204,8 +204,8 @@ Robot musts can:
 | Module responsibilities and failure modes | [ARCHITECTURE.md](https://github.com/markthesuperpro/rdk-x5-stage1/blob/main/ARCHITECTURE.md) |
 | BPU / CPU | [ARCHITECTURE.md](https://github.com/markthesuperpro/rdk-x5-stage1/blob/main/ARCHITECTURE.md) |
 | ROS 2 graph and interfaces | Architecture diagrams |
-| BOM and engineering timeline | [ENGINEERING_PLAN.md] / [ROADMAP.md](https://github.com/markthesuperpro/rdk-x5-stage1/blob/main/ROADMAP.md) |
-| risks and mitigation | [ENGINEERING_PLAN.md] |
+| BOM and engineering timeline | [ENGINEERING_PLAN.md](https://github.com/markthesuperpro/rdk-x5-stage1/blob/main/docs/ENGINEERING_PLAN.md) / [ROADMAP.md](https://github.com/markthesuperpro/rdk-x5-stage1/blob/main/ROADMAP.md) |
+| risks and mitigation | [ENGINEERING_PLAN.md](https://github.com/markthesuperpro/rdk-x5-stage1/blob/main/docs/ENGINEERING_PLAN.md) |
 | Repository structure | [GitHub](https://github.com/markthesuperpro/rdk-x5-stage1) |
 | Community post | [Discord](https://discord.com/channels/1300358874280230994/1503706103752429618/threads/1565947368782831757) |
 
