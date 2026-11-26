@@ -54,19 +54,79 @@ The quadruped robot is fitted with IMU and Lidar, in which allows it to sense it
 
 **High-Level Data Flow**
 
-```text
-Sensors
-   ↓
-RDK X5 — ROS 2 / TROS
-   ├── Perception
-   ├── SLAM / Localization
-   └── Navigation (Nav2)
-          ↓
-       /cmd_vel
-          ↓
-ESP32 — Gait / Motor Control
-          ↓
-       Actuators
+```mermaid
+flowchart LR
+    %% INPUTS
+    subgraph INPUTS["Inputs"]
+        direction TB
+        LIDAR["LiDAR"]
+        IMU["IMU"]
+        CAMERA["Camera"]
+        JOYSTICK["Joystick"]
+    end
+
+    %% RDK X5
+    subgraph RDK["RDK X5 — High-Level Processing"]
+        direction TB
+
+        subgraph NAV["Autonomous Navigation"]
+            direction TB
+            SLAM["SLAM<br/>Mapping & Localization"]
+            NAV2["Nav2<br/>Path Planning & Navigation"]
+            SLAM -->|"Map / Localization / TF"| NAV2
+        end
+
+        subgraph AI["AI Perception"]
+            direction TB
+            MODEL["AI Model"]
+            OUTPUT["Output Node"]
+            MODEL --> OUTPUT
+        end
+    end
+
+    %% ESP32
+    subgraph ESP["ESP32 — Low-Level Control"]
+        direction TB
+        NAV_IN["Navigation Command Input"]
+        JOY_IN["Joystick Input"]
+        MUX["Command Arbitration<br/>Manual / Autonomous / Safety"]
+        GAIT["Gait & Servo Control Firmware"]
+
+        NAV_IN --> MUX
+        JOY_IN --> MUX
+        MUX --> GAIT
+    end
+
+    %% OUTPUTS
+    subgraph OUTPUTS["Physical Outputs"]
+        direction TB
+        SERVOS["Servos"]
+        AUX["Other Event-Driven Outputs"]
+    end
+
+    %% NAVIGATION ROUTE
+    LIDAR -->|"Laser Scan"| SLAM
+    IMU -->|"Orientation / Angular Velocity"| SLAM
+    NAV2 -->|"/cmd_vel via communication bridge"| NAV_IN
+    GAIT --> SERVOS
+
+    %% CAMERA / AI ROUTE
+    CAMERA -->|"Image Frames"| MODEL
+    OUTPUT --> AUX
+
+    %% MANUAL CONTROL ROUTE
+    JOYSTICK --> JOY_IN
+
+    %% STYLING
+    classDef sensor fill:#dbeafe,stroke:#2563eb,color:#172554
+    classDef compute fill:#ede9fe,stroke:#7c3aed,color:#2e1065
+    classDef control fill:#ffedd5,stroke:#ea580c,color:#431407
+    classDef output fill:#dcfce7,stroke:#16a34a,color:#14532d
+
+    class LIDAR,IMU,CAMERA,JOYSTICK sensor
+    class SLAM,NAV2,MODEL,OUTPUT compute
+    class NAV_IN,JOY_IN,MUX,GAIT control
+    class SERVOS,AUX output
 ```
 
 **Compute Allocation**
