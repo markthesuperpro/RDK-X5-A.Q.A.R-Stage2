@@ -37,6 +37,7 @@ rdk-x5-stage1/
 ├── ROADMAP.md
 ├── PROPOSAL.md
 ├── ARCHITECTURE.md
+├── STAGE1_SETUP.md
 ├── LICENSE
 ├── requirements.txt
 ├── src/
