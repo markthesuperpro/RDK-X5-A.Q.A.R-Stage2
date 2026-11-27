@@ -25,8 +25,8 @@ Last updated: 2026-11-26.
 - [x] Roadmap.md
 - [x] ENGINEERING_PLAN.md
 - [x] fix Readme.md
-- [ ] Showcase.md & Pull request
-- [ ] Discord Thread
+- [x] Showcase.md & Pull request
+- [x] Discord Thread
 
 ### Stage 3 (27 Nov–15 Dec) — status: PLANNED.
 
